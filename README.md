@@ -31,11 +31,16 @@ var isOk = stringFirewall.evaluate("Some test message");
 ```
 
 2. The `allow` option, though only accepts regex, accepts three different options: `StringFirewallOption`, `String`, and `List<String>`:
-
 ```Java
 allow(List<String> customStringRules)
 allow(StringFirewallOption option)
 allow(String regex)
+```
+
+3. The `evaluate` method will strictly match the regex patterns provided; meaning that if there are patterns / strings / characters that don't match with what was given via `allow`, it will return `false` instead of `true`:
+```Java
+boolean isOk = StringFirewall.getStringFirewall().allow("[A-Z]").evaluate("ABC123");
+// isOk will evaluate to false, you will need to allow("[0-9]") for the above statement to evaluate to true
 ```
 
 
@@ -51,8 +56,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
