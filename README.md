@@ -30,7 +30,7 @@ stringFirewall.allow("some regex here").allow("second regex").allow(StringFirewa
 var isOk = stringFirewall.evaluate("Some test message");
 ```
 
-2. The `allow` option, though only accepts regex, accepts three different options: `StringFirewallOption`, `String`, and `List<String>`:
+2. The `allow` method, though only accepts regex, accepts three different types of parameters: `StringFirewallOption`, `String`, and `List<String>`:
 ```Java
 allow(List<String> customStringRules)
 allow(StringFirewallOption option)
