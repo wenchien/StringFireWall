@@ -24,7 +24,7 @@ stringFirewall.evaluate("Some test message");
 ```
 
 # Notes
-1. Do note that `evaluate` is generally called after one or several `allow`. Method chaining is available: 
+1. Do note that `evaluate` is generally called after one or several `allow` calls. Method chaining is available: 
 ```Java
 stringFirewall.allow("some regex here").allow("second regex").allow(StringFirewallOption.ALLOW_HTML_CHARACTERS);
 var isOk = stringFirewall.evaluate("Some test message");
