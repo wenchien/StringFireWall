@@ -2,10 +2,42 @@
 ![JavaFx][javafx-version]
 ![Maven][maven-version]
 
-# StringFireWall
+# About the project
 A small library that demonstrates the following:
 1. Firewall best practices are generally applied based on the rule of "allow exceptions, then deny all". This small Java class demonstrates this as a proof of concept
 2. Encourages cleaner code.
+
+# Usage
+
+Using StringFirewall is easy! 
+1. Create a new StringFirewall instance by calling the static method
+```Java
+var stringFirewall = StringFirewall.getStringFirewall();
+```
+
+2. Upon successful creation of the StringFirewall object, you may call two methods: `allow` and `evaluate`:
+```Java
+stringFirewall.allow("some regex here")
+```
+```Java
+stringFirewall.evaluate("Some test message");
+```
+
+# Notes
+1. Do note that `evaluate` is generally called after one or several `allow`. Method chaining is available: 
+```Java
+stringFirewall.allow("some regex here").allow("second regex").allow(StringFirewallOption.ALLOW_HTML_CHARACTERS);
+var isOk = stringFirewall.evaluate("Some test message");
+```
+
+2. The `allow` option, though only accepts regex, accepts three different options: `StringFirewallOption`, `String`, and `List<String>`:
+
+```Java
+allow(List<String> customStringRules)
+allow(StringFirewallOption option)
+allow(String regex)
+```
+
 
 <!-- LICENSE -->
 ## License
