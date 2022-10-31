@@ -41,6 +41,7 @@ allow(String regex)
 ```Java
 boolean isOk = StringFirewall.getStringFirewall().allow("[A-Z]").evaluate("ABC123");
 // isOk will evaluate to false, you will need to allow("[0-9]") for the above statement to evaluate to true
+// this is demonstrate "allow exceptions, then deny all"
 ```
 
 
