@@ -4,7 +4,7 @@
 
 # About the project
 A small library that demonstrates the following:
-1. Firewall best practices are generally applied based on the rule of "allow exceptions, then deny all". This small Java class demonstrates this as a proof of concept
+1. Firewall best practices are generally applied based on the rule of "allow exceptions, then deny all", at least for enterprises internal network. This small Java class demonstrates this as a proof of concept
 2. Encourages cleaner code.
 
 # Usage
